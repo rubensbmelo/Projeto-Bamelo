@@ -1,127 +1,309 @@
-/* Reset básico */
+/*    1. Geral e Cores para o site completo */
+:root {
+    --vermelho-bamelo: #b93a3a;
+    --vermelho-hover: #912d2d;
+    --marrom-conpel: #5d3a1a;    /* Cor que peguei do logo Conpel */
+    --bege-papelao: #f4ece6;      /* um fundo que parece um pouco com a cor do papelao */
+    --cinza-texto: #333;
+    --cinza-claro: #f4f4f4;
+    --branco: #ffffff;
+}
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: var(--cinza-texto);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Container para centralizar o conteúdo em telas grandes */
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Header e Menu */
+/* ==========================================
+   2. CABEÇALHO (NAVBAR)
+   ========================================== */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
 }
 
 .logo {
-  width: 250px;
+    width: 300px; /* Aumentamos de 220px para 300px */
+    height: auto;  /* Garante que a proporção não mude */
+    transition: transform 0.3s ease; /* Efeito suave se quiser adicionar hover */
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.MENU ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
 }
 
 .MENU a {
-  text-decoration: none;
-  color: #333;
-  margin: 0 15px;
-  font-weight: 500;
+    text-decoration: none;
+    color: #555;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.MENU a:hover {
+    color: var(--vermelho-bamelo);
 }
 
 .button-1 {
-  background-color: #b93a3a;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-family: 'Poppins';
+    background-color: var(--vermelho-bamelo);
+    color: var(--branco);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Seção Principal (Hero) */
+.button-1:hover {
+    background-color: var(--vermelho-hover);
+}
+
+/* ==========================================
+   3. SEÇÃO HERO (PRINCIPAL)
+   ========================================== */
 .hero {
-  padding: 60px 0;
+    padding: 60px 0 100px 0;
 }
 
 .hero-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* Mantém os dois lados equilibrados */
-  gap: 60px;
-  /* Cria o espaço entre imagem e texto */
+    display: flex;
+    align-items: center;
+    gap: 60px;
 }
 
 .img-hero {
-  width: 45%;
-  /* Aumentei um pouco para preencher melhor */
-  border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.linha {
-  max-width: 500px;
+.hero-text h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
-.linha h1 {
-  font-size: 3rem;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.linha h1 span {
-  color: #b93a3a;
-}
-
-.linha p {
-  color: #666;
-  margin-bottom: 30px;
-  font-size: 1.1rem;
+.destaque {
+    color: var(--vermelho-bamelo);
 }
 
 .button-2 {
-  background-color: #b93a3a;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+    background-color: var(--vermelho-bamelo);
+    color: var(--branco);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(185, 58, 58, 0.3);
 }
 
 .button-2:hover {
-  background-color: #912d2d;
+    background-color: var(--vermelho-hover);
+    transform: translateY(-3px);
 }
 
-/* Ajuste para Celular */
-@media (max-width: 768px) {
+/* ==========================================
+   4. FAIXA DE EXPERIÊNCIA (PE / PB)
+   ========================================== */
+.experiencia {
+    background-color: var(--vermelho-bamelo);
+    color: var(--branco);
+    padding: 40px 0;
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
 
-  .navbar,
-  .hero-inner {
-    flex-direction: column;
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
     text-align: center;
-  }
+}
 
-  .MENU {
-    margin-top: 20px;
-  }
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
 
-  .MENU a {
-    display: block;
-    margin: 10px 0;
-  }
+.stat-item p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-  .img-hero {
+/* ==========================================
+   5. SEÇÃO PARCERIA CONPEL (MARROM)
+   ========================================== */
+.parceria-conpel {
+    padding: 100px 0;
+    background-color: var(--bege-papelao); /* Fundo cor de papelão */
+    text-align: center;
+}
+
+.destaque-conpel {
+    color: var(--marrom-conpel); /* Cor correta do logo */
+    font-weight: bold;
+}
+
+.selos-sustentabilidade {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.selos-sustentabilidade span {
+    background: var(--marrom-conpel);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   6. GRID DE PRODUTOS (ATUALIZADO COM IMAGENS)
+   ========================================== */
+.produtos-lista {
+    padding: 80px 0;
+}
+
+.titulo-secao {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.grid-produtos {
+    display: flex;
+    gap: 30px;
+}
+
+.card-produto {
+    flex: 1;
+    height: 250px; /* Altura fixa para exibir bem a imagem */
+    border-radius: 15px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: 0.3s ease;
+    border: none; /* Remove a borda antiga */
+}
+
+/* Caminhos das imagens da sua pasta assets */
+.bg-bobina { background-image: url('./assets/papel-simplex.jpeg'); }
+.bg-chapa { background-image: url('./assets/chapa-papelao.webp'); }
+.bg-caixa { background-image: url('./assets/caixa-papelao.jpg'); }
+
+/* Camada de cor para garantir leitura do texto */
+.overlay {
+    background: rgba(0, 0, 0, 0.55); /* Escurece a imagem */
     width: 100%;
-    margin-bottom: 30px;
-  }
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: var(--branco);
+    transition: 0.3s ease;
+}
+
+/* Efeito Hover */
+.card-produto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card-produto:hover .overlay {
+    background: rgba(0, 0, 0, 0.4); /* Clareia levemente no hover */
+}
+
+.overlay h3 {
+    color: var(--branco) !important; /* Força o título a ser branco sobre a foto */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para destacar no fundo */
+}
+
+.overlay p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 250px;
+}
+
+/* ==========================================
+   7. RESPONSIVIDADE (MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar, .hero-inner, .stats-grid, .grid-produtos {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .grid-produtos {
+        align-items: center;
+    }
+
+    .card-produto {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text h1 { font-size: 2.5rem; }
+    
+    .MENU ul {
+        margin-top: 20px;
+        flex-direction: column;
+    }
+
+    .button-1 { width: 100%; margin-top: 15px; }
+    
+    .img-hero { order: -1; }
+}
+
+footer {
+    padding: 40px 0;
+    text-align: center;
+    background: #222;
+    color: #888;
+    font-size: 0.9rem;
 }
