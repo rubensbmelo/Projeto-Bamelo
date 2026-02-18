@@ -3,7 +3,7 @@
     --vermelho-bamelo: #b93a3a;
     --vermelho-hover: #912d2d;
     --marrom-conpel: #5d3a1a;    /* Cor que peguei do logo Conpel */
-    --bege-papelao: #f4ece6;      /* um fundo que parece um pouco com a cor do papelao */
+    --bege-papelao: #f4ece6;      /* um fundo que parece um pouco com a cor do papel */
     --cinza-texto: #333;
     --cinza-claro: #f4f4f4;
     --branco: #ffffff;
@@ -44,6 +44,7 @@ body {
     transition: transform 0.3s ease; /* Efeito suave se quiser adicionar hover */
 }
 
+/* Opcional: Efeito para o logo crescer levemente ao passar o mouse */
 .logo:hover {
     transform: scale(1.02);
 }
