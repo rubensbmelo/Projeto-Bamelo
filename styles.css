@@ -19,7 +19,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: var(--cinza-texto);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Garante que nada "vaze" para os lados */
 }
 
 .container {
@@ -65,7 +65,6 @@ header {
     color: var(--vermelho-bamelo);
 }
 
-/* Ajustado para funcionar como link ou botão */
 .button-1 {
     background-color: var(--vermelho-bamelo);
     color: var(--branco) !important;
@@ -112,7 +111,6 @@ header {
     font-weight: 800;
 }
 
-/* Ajustado para o link Solicitar Orçamento */
 .button-2 {
     background-color: var(--vermelho-bamelo);
     color: var(--branco) !important;
@@ -174,6 +172,24 @@ header {
     padding: 100px 0;
     background-color: var(--bege-papelao);
     text-align: center;
+}
+
+/* 5.1 Ajuste da Logo Conpel (Reduzida para não alargar o site) */
+.titulo-representante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    width: 100%; /* Garante que o container respeite a tela */
+}
+
+.logo-conpel-inline {
+    width: 90%;       /* Ocupa no máximo 90% da largura disponível */
+    max-width: 250px; /* Reduzi de 350px para 250px para ficar mais elegante */
+    height: auto;
+    object-fit: contain;
 }
 
 /* 6. Grid de Produtos */
@@ -264,5 +280,15 @@ header {
 
     .img-hero {
         max-width: 100%;
+    }
+
+    /* Espaçamento entre cards de produtos no mobile */
+    .grid-produtos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .logo-conpel-inline {
+        max-width: 180px; /* Tamanho discreto no celular */
     }
 }
